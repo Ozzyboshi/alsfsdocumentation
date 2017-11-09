@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <title>Alsfs documentation</title>
+  
+
+  <link rel="shortcut icon" href="./img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="./css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="./css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="./css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "None";
+    var mkdocs_page_input_path = "index.md";
+    var mkdocs_page_url = "/";
+  </script>
+  
+  <script src="./js/jquery-2.1.1.min.js"></script>
+  <script src="./js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="./js/highlight.pack.js"></script>
+  <script src="./js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="." class="icon icon-home"> Alsfs documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 current">
+        <a class="current" href=".">Home</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#welcome-to-the-alsfs-documentation-website">Welcome to the Alsfs documentation website</a></li>
+                
+                    <li><a class="toctree-l4" href="#why">Why?</a></li>
+                
+                    <li><a class="toctree-l4" href="#prerequisites">Prerequisites</a></li>
+                
+                    <li><a class="toctree-l4" href="#project-layout">Project layout</a></li>
+                
+            
+            </ul>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="test/">About</a>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href=".">Alsfs documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Home</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="welcome-to-the-alsfs-documentation-website">Welcome to the Alsfs documentation website</h1>
+<p>The Amiga Linux filesystem (alsfs from now) is a collection of applications for managing file transfers between a GNU/Linux PC and a real Amiga with a regular Serial cable.
+With alsfs you can:
+<em> Upload files from your PC to your Amiga
+</em> Download files from your PC to your Amiga
+<em> Create and delete drawers (directories) on your Amiga
+</em> Create, edit and delete files on your Amiga
+<em> Get adf images from your real Amiga floppy
+</em> Write adf images stored on your PC to aa real Amiga floppy.</p>
+<h3 id="why">Why?</h3>
+<p>This is a very good question, there are already a lot of solution out there, why should I use it?
+The most common and popular piece of software for communicating with a real Amiga is of course AmigaExplorer by Cloanto (https://www.amigaforever.com/ae/)
+Amigaexplorer works very well and is awesome but it requires a Windows machine and and its code is not free.
+Since I don't own a Windows machine (and I don't want to buy or run Microsoft operating systems in my hardware) I wrote some Linux compatible code to match Amigaexplorer most famous features, that's how alsfs is born.
+On the other side I must warn you, alsfs is extremely slow if compared with Amigaexplorer but at the end of the day It works for me and I doubt I will come up with speed improvement in the future.</p>
+<h3 id="prerequisites">Prerequisites</h3>
+<ul>
+<li>A GNU/Linux based server with a serial port - This is meant to host a nodejs server, any distro should be OK as long it's capable to run nodejs with expressjs.For this task I use a Raspberry Pie 1 and an Intel NUC, they are low powered and relatively inexpensive.
+If you don't have a serial port available you can buy a (Manhattan da USB to Serial converter)[https://www.amazon.it/gp/product/B0007OWNYA/ref=oh_aui_detailpage_o01_s00?ie=UTF8&amp;psc=1], this converter works well in my NUC and my Raspberry PI, I suppose it works on any GNU/Linux distribution with a relatively recent kernel.</li>
+<li>A null-modem serial cable - You can buy it online or build it on your own, the schematics are here : https://www.amigaforever.com/gfx/null-modem/wiring_9-25.gif.</li>
+<li><code>mkdocs build</code> - Build the documentation site.</li>
+<li><code>mkdocs help</code> - Print this help message.</li>
+</ul>
+<h2 id="project-layout">Project layout</h2>
+<pre><code>mkdocs.yml    # The configuration file.
+docs/
+    index.md  # The documentation homepage.
+    ...       # Other markdown pages, images and other files.
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="test/" class="btn btn-neutral float-right" title="About">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+        <span style="margin-left: 15px"><a href="test/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>
+
+<!--
+MkDocs version : 0.15.3
+Build Date UTC : 2017-10-29 11:32:54.446262
+-->

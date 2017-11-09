@@ -1,0 +1,10 @@
+site_name: Alsfs documentation
+pages:
+    - Home: index.md
+    - Demos: demos.md
+    - Install: install.md
+    - Alsfs Chrome Extension: alsfschromeextension.md
+    - Alsfssrv: alsfssrv.md
+    - Alsfs: alsfs.md
+    - About: test.md
+theme: readthedocs
