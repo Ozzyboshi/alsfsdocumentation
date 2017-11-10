@@ -1,6 +1,5 @@
 # Alsfssrv
-Alsfssrv is the Amiga counterpart of the alsfsNodejsServer, they sits in background waiting for someone's requests.
-Alsfssrv waits for incoming request through the Amiga serial port, responses are also dispatched using the serial port.
+Alsfssrv is the Amiga counterpart of the alsfsNodejsServer, It sits in background waiting for someone's requests through the Amiga serial port, responses are also dispatched using the serial port.
 Each request must have a very specific syntax, in many cases, where some sort of synchronization is required, the requests start a dialog demanding the calling part more information.
 
 ### How to compile
