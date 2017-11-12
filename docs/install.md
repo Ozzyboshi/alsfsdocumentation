@@ -57,9 +57,34 @@ Type 'type ser: to ram: setup on your amiga' and press a
 If this is the case continue to [Copy alsfssrv to the amiga](#copy-alsfssrv-to-the-amiga)
 
 ### Install alsfsNodejsServer on a Raspberry Pi running Raspbian
-coming soon...
+Assuming you have already installed nodejs and npm like the installationb processo for Debian, follow these steps:
 
-Go to [Copy alsfssrv to the amiga](#copy-alsfssrv-to-the-amiga)
+Go to [My github repository](https://github.com/Ozzyboshi/alsfsNodejsServer/releases) and grab the latest version of alsfsNodejsServer and install first node serialport with this command:
+```
+npm install serialport@^4.0.7 --unsafe-perm --build-from-source
+```
+
+then all the depenencies with npm, for example:
+
+```
+wget https://github.com/Ozzyboshi/alsfsNodejsServer/archive/v1.tar.gz
+tar -xvzpf v1.tar.gz 
+cd alsfsNodejsServer-1/
+npm install serialport@^4.0.7 --unsafe-perm --build-from-source
+npm install
+```
+
+Now you can now start the bootstrap process with node amigajsserver.js #serialport# #iptobind# -bootstrap, for example in this case I tell amigajsserver to use the /dev/ttyUSB0 file attached to a [Manhattan da USB to Serial converter](http://www.manhattan-products.com/usb-to-serial-converter) and to bind the 8081 port to all ips  :
+```
+node amigajsserver.js /dev/ttyUSB0 0.0.0.0 -bootstrap
+```
+Of course if you have a real serial interface in your PC you should have something like /dev/sttyX.
+If everything went well you should read this message:
+```
+Send stty 19200 -parenb cs8 crtscts -ixon -ixoff raw iutf8 -F /dev/ttyUSB0
+Type 'type ser: to ram: setup on your amiga' and press a
+```
+If this is the case continue to [Copy alsfssrv to the amiga](#copy-alsfssrv-to-the-amiga)
 
 ### Install alsfsNodejsServer using Docker
 If you have docker installed on your system, starting alsfsNodejsServer is trivial.
