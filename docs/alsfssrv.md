@@ -6,7 +6,9 @@ Each request must have a very specific syntax, in many cases, where some sort of
 Although you can get alsfssrv in his Amiga binary form from the [alsfsNodejsServer Github page](https://github.com/Ozzyboshi/alsfsNodejsServer), It can be useful to compile it, especially if you want to apply your own patches or new features.
 
 In order to compile alsfssrv I used [vbcc C Compiler](http://sun.hasenbraten.de/vbcc/), I found the instruction how to setup the environment on [this youtube video](https://www.youtube.com/watch?v=vFV0oEyY92I&t=50s).
+
 However the entire process is time consuming and error prone, so I dockerized it creating my own vbcc Docker image.
+
 You can compile the whole alsfssrv sources with the following commands:
 
 ```
