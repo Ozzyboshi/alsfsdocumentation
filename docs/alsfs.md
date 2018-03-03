@@ -13,16 +13,16 @@ apt-get install autotools-dev pkg-config dh-autoreconf libfuse-dev libcurl4-open
 Go to the [github repository](https://github.com/Ozzyboshi/alsfs/releases) and download the latest version, extract it and install it with the following commands.
 
 ```
-wget https://github.com/Ozzyboshi/alsfs/archive/v1.tar.gz
-tar -xvzpf v1.tar.gz
-cd alsfs-1
+wget https://api.github.com/repos/Ozzyboshi/alsfs/tarball -O alsfs.tar.gz
+tar -xvzpf alsfs.tar.gz
+cd Ozzyboshi-alsfs-3d12867/
 autoreconf
 ./configure
 make
 sudo make install
 ```
 
-Now you should have the alsfs binary file installed on /usr/local/bin.
+Now you should have the latest alsfs binary file installed on /usr/local/bin.
 
 ### Test
 Once alsfs is properly installed you can launch it with:
