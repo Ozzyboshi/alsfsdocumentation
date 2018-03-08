@@ -1,10 +1,10 @@
 In this section I'm going to describe how to use alsfs in an emulated environment using fs-uae and a virtal serial port using socat,this will allow you to perform a painless test through different emulated amigas very quickly.
 
 Requirements:
-* A modern desktop/laptop machine FS-UAE installed
-* Workbench (at least 2.1) adf files
-* A 64bit Gnu/Linux server machine (no matter if virtual or not) with Docker installed
-* The 2 machines must be able to talk through an ip connection.
+
+- A modern desktop/laptop machine FS-UAE installedWorkbench (at least 2.1) adf files
+- A 64bit Gnu/Linux server machine (no matter if virtual or not) with Docker installed
+- The 2 machines must be able to talk through an ip connection.
 
 Step 1:
 Create a new fs-uae configuration with fs-uae launcher, this configuration must be able to boot workbench 2.1 or above.
