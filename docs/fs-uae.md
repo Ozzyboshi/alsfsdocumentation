@@ -32,7 +32,7 @@ In this scenario we are using ip 192.168.137.2 for the fs-uae side and 192.168.1
 
 Start the fs-uae amiga machine, the boot process will be freezed, waiting for the tcp connection to come up.
 
-Go to a Gnu/Linux machine (192.168.137.3) with Docker installed and run:
+Go to the Gnu/Linux machine (192.168.137.3) with Docker installed and run:
 
 ```
   docker run --rm -it -p 8081:8081 -p 1234:1234 -v /alsfsAmigaServer/:/server -w /server node /bin/bash
