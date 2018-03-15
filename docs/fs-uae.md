@@ -51,13 +51,13 @@ This command will create a new file (/dev/virtualcom), every tcp packet for 192.
 After running socat, fs-uae must start the Workbench boot sequence, at this point you can bootstrap alsfs or, if you have alsfssrv already installed on your emulated amiga, start the alsfs nodejs server, in this scenario the command will be:
 
 ```
-node amigajsserver.js /dev/virtuacom 0.0.0.0
+node amigajsserver.js /dev/virtualcom0 0.0.0.0
 ```
 
 Since the default listening port is 8081, this command is equivalent to 
 
 ```
-node amigajsserver.js /dev/virtuacom 0.0.0.0:8081
+node amigajsserver.js /dev/virtualcom0 0.0.0.0 8081
 ```
 
 The same 8081 port is exposed by docker using the -p parameter when we created the virtual container.
