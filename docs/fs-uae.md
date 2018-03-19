@@ -57,7 +57,7 @@ node amigajsserver.js /dev/virtualcom0 0.0.0.0
 Since the default listening port is 8081, this command is equivalent to 
 
 ```
-node amigajsserver.js /dev/virtualcom0 0.0.0.0 8081
+node amigajsserver.js /dev/virtualcom0 0.0.0.0:8081
 ```
 
 The same 8081 port is exposed by docker using the -p parameter when we created the virtual container.
