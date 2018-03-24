@@ -38,7 +38,7 @@ v8.9.0
 Now go to [My github repository](https://github.com/Ozzyboshi/alsfsNodejsServer/releases) and grab the latest version of alsfsNodejsServer and install all the depenencies with npm:
 
 ```
- wget https://api.github.com/repos/Ozzyboshi/alsfsNodejsServer/tarball -O alsfsNodejsServer.tar.gz
+wget https://api.github.com/repos/Ozzyboshi/alsfsNodejsServer/tarball -O alsfsNodejsServer.tar.gz
 tar -xvzpf alsfsNodejsServer.tar.gz
 cd Ozzyboshi-alsfsNodejsServer-e64ad45/
 npm install
