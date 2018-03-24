@@ -38,9 +38,9 @@ v8.9.0
 Now go to [My github repository](https://github.com/Ozzyboshi/alsfsNodejsServer/releases) and grab the latest version of alsfsNodejsServer and install all the depenencies with npm:
 
 ```
-wget https://github.com/Ozzyboshi/alsfsNodejsServer/archive/v1.tar.gz
-tar -xvzpf v1.tar.gz 
-cd alsfsNodejsServer-1/
+ wget https://api.github.com/repos/Ozzyboshi/alsfsNodejsServer/tarball -O alsfsNodejsServer.tar.gz
+tar -xvzpf alsfsNodejsServer.tar.gz
+cd Ozzyboshi-alsfsNodejsServer-e64ad45/
 npm install
 ```
 
@@ -67,9 +67,9 @@ npm install serialport@^4.0.7 --unsafe-perm --build-from-source
 then all the depenencies with npm, for example:
 
 ```
-wget https://github.com/Ozzyboshi/alsfsNodejsServer/archive/v1.tar.gz
-tar -xvzpf v1.tar.gz 
-cd alsfsNodejsServer-1/
+wget https://api.github.com/repos/Ozzyboshi/alsfsNodejsServer/tarball -O alsfsNodejsServer.tar.gz
+tar -xvzpf alsfsNodejsServer.tar.gz
+cd Ozzyboshi-alsfsNodejsServer-e64ad45/
 npm install serialport@^4.0.7 --unsafe-perm --build-from-source
 npm install
 ```
@@ -90,9 +90,9 @@ If this is the case continue to [Copy alsfssrv to the amiga](#copy-alsfssrv-to-t
 If you have docker installed on your system, starting alsfsNodejsServer is trivial.
 First of all download the application, decompress it and get the dependencies.
 ```
-wget https://github.com/Ozzyboshi/alsfsNodejsServer/archive/v1.tar.gz
-tar -xvzpf v1.tar.gz 
-cd alsfsNodejsServer-1/
+wget https://api.github.com/repos/Ozzyboshi/alsfsNodejsServer/tarball -O alsfsNodejsServer.tar.gz
+tar -xvzpf alsfsNodejsServer.tar.gz
+cd Ozzyboshi-alsfsNodejsServer-e64ad45/
 docker run --rm -it -v `pwd`:/server -w /server node /bin/bash -c 'npm install'
 ```
 
@@ -101,7 +101,7 @@ then start the bootstrap process with
 docker run --rm -it -v `pwd`:/server --device=/dev/ttyUSB0 -w /server node /bin/bash -c 'node amigajsserver /dev/ttyUSB0 0.0.0.0 -bootstrap'
 ```
 Pay attention to the --device flag, you must pass the correct serial connection to docker and the same file must be passed as a first argument to amigajsserver.
-Il you are not running docker as root you will have probably to allow your unprivileged user to use the serial file with:
+Il you are not running Docker as root you will have probably to allow your unprivileged user to use the serial file with:
 ```
 sudo usermod -a -G dialout ozzy 
 ```
@@ -122,7 +122,7 @@ Send cat receive.rexx > /dev/virtualcom0
 Press ctrl+c on your amiga and then press a in this terminal
 ```
 
-Press Ctrl+c on your amiga and again the letter a on the PC, a break message should appear on the Amiga terminal and the following text in the PC terminal.
+Press Ctrl+c on your amiga and again the 'a' key on the PC, a break message should appear on the Amiga terminal and the following text in the PC terminal.
 
 ```
 Type rx ram:setup on your amiga and then press a in this terminal
@@ -136,11 +136,12 @@ Now type on your Amiga
 rx ram:setup
 ```
 
-Wait until the message 'Now send the file' is displayed and press again the 'a' letter on the PC keyboard.
+Wait until the message 'Now send the file' is displayed and press again the 'a' key on the PC keyboard.
 The file transfer should start, at the end you will get the file alsfssrv into your ram disk.
 It's recommended to store this file to your hard drive or a floppy disk so you don't have to repeat the whole bootstrap process in the future.
+To ease the process I usually move alsfssrv under WB:/C since this drawer is on path.
 
-Now just type in the Amiga terminal: 'ram:alsfssrv' to start the server (OR 'ram:alsfssrv -verbose' if you want to see the debug messages) and on the PC side:
+Now just type in the Amiga terminal: 'ram:alsfssrv' (or just alsfssrv if you moved the file in WB:/C)  to start the server, use the '-verbose' flag (for example 'ram:alsfssrv -verbose') if you want to see the debug messages (this will slow the transfers) and on the PC side:
 
 ```
 node amigajsserver.js /dev/virtualcom0 0.0.0.0 
@@ -149,7 +150,7 @@ Opening /dev/virtualcom0
 Amiga alsfs server webApi listening at http://0.0.0.0:8081
 ```
 
-OR with docker:
+OR with Docker:
 
 ```
 docker run --name alsfs -d -v `pwd`:/server --device=/dev/ttyUSB0 -p 8081:8081 -w /server node node amigajsserver /dev/ttyUSB0 0.0.0.0
