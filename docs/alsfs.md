@@ -1,8 +1,8 @@
 # Alsfs
-Another (and more featured) way to talk to the alsfsNodejsServer is to install alsfs.
-Alsfs is a filesystem for Linux, sice It relays on fuse, it works in the userspace  and lets you mount a partition designed to communicate with the alsfsNodejsServer.
-In this way you can use your favourite file manager to write/read data from and to the Amiga.
-Alsfs is designed and tested to work on Debian based distros, the following installation process describes how to get up and running on a Debian 8 Jessie system.
+Another (and more featured) way to talk to the alsfsNodejsServer is to install alsfs.  
+Alsfs is a filesystem for Linux, since It relays on fuse, it works in the userspace  and lets you mount a partition designed to communicate with the alsfsNodejsServer.  
+In this way you can use your favourite file manager to write/read data from and to the Amiga.  
+Alsfs is designed and tested to work on Debian based distros, the following installation process describes how to get up and running on a Debian 8 Jessie system.  
 
 ### Installation
 In order to use alsfs you have first to install some dependencies with this command:
