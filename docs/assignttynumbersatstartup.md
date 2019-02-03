@@ -1,4 +1,4 @@
-# How to assign TTY numbers issue at startup
+# How to assign TTY numbers at startup
 If you have multiple Amigas each one connected with its own serial USB Adapter, there are chances that the device files under /dev/ changes at each reboot.  
 In my case, for example, I have 4 serial usb adapters and by default they are numbered gradually:
 
