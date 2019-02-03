@@ -7,4 +7,5 @@ pages:
     - Alsfssrv: alsfssrv.md
     - Alsfs: alsfs.md
     - Fs-uae: fs-uae.md
+    - USBTTY names assignment: assignttynumbersatstartup.md
 theme: readthedocs
