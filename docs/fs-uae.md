@@ -2,9 +2,9 @@ In this section I'm going to describe how to use alsfs in an emulated environmen
 
 Requirements:
 
-- A modern desktop/laptop machine FS-UAE installedWorkbench (at least 2.1) adf files
+- A modern desktop/laptop machine with FS-UAE installed booting Workbench (at least version 2.1)
 - A 64bit Gnu/Linux server machine (no matter if virtual or not) with Docker installed
-- The 2 machines must be able to talk through an ip connection.
+- The above mentioned machines must be able to talk through an ip connection.
 
 Step 1:
 Create a new fs-uae configuration with fs-uae launcher, this configuration must be able to boot workbench 2.1 or above.
@@ -26,8 +26,8 @@ and append the serial port parameter line in the form tcp://ip:port/wait at the 
   serial_port = tcp://192.168.137.2:1234/wait
 ```
 
-This will instruct fs-uae to wait to boot the amiga until a tcp connection with 192.168.137.2 port 1234 is established.
-Please note that if you enter and invalid serial port (for example you don't have any network interfaces with this ip assigned), fs-uae will boot Workbench without waiting, this must not occur.
+This will instruct fs-uae to wait to boot the amiga only when a tcp connection with 192.168.137.2 port 1234 is established.
+Please note that if you enter and invalid serial port (for example you don't have any network interfaces with this ip assigned), fs-uae will boot Workbench without waiting, this must not happen.
 In this scenario we are using ip 192.168.137.2 for the fs-uae side and 192.168.137.3 for the server side, as stated previously this 2 hosts must be able to talk to each other.
 
 Start the fs-uae amiga machine, the boot process will be freezed, waiting for the tcp connection to come up.
@@ -38,17 +38,17 @@ Go to the Gnu/Linux machine (192.168.137.3) with Docker installed and run:
   docker run --rm -it -p 8081:8081 -p 1234:1234 -v /alsfsAmigaServer/:/server -w /server node /bin/bash
 ```
 
-Of course you must install alsfsAmigaServer on the directory /alsfsAmigaServer before running this command.
+Of course you must install (or clone from the github repo) alsfsAmigaServer on the directory /alsfsAmigaServer before running this command.
 
-Now let's install socat, a powerful software which lets you creare a virtual tcp socket necessary to establish a connection with fs-uae running on your laptop.
+Now let's install and run socat, a powerful software which lets you creare a virtual tcp socket necessary to establish a connection with fs-uae running on your laptop.
 
 ```
   apt-get update && apt-get install socat
   socat pty,link=/dev/virtualcom0,raw tcp:192.168.137.2:1234 &
 ```
 
-This command will create a new file (/dev/virtualcom), every tcp packet for 192.168.137.2:1234 will be routed to this file that emulates a serial connection, this will be our connection between alsfs server and fs-uae.
-After running socat, fs-uae must start the Workbench boot sequence, at this point you can bootstrap alsfs or, if you have alsfssrv already installed on your emulated amiga, start the alsfs nodejs server, in this scenario the command will be:
+This command will create a new file (/dev/virtualcom), every tcp packet for 192.168.137.2:1234 will be routed to this file that emulates a serial connection, this will be our socket between alsfs server and fs-uae.
+After running socat, fs-uae must start the Workbench boot sequence, at this point you can bootstrap alsfs or, if you have alsfssrv already installed on your emulated Amiga, start the alsfs nodejs server, in this scenario the command will be:
 
 ```
 node amigajsserver.js /dev/virtualcom0 0.0.0.0
@@ -60,11 +60,18 @@ Since the default listening port is 8081, this command is equivalent to
 node amigajsserver.js /dev/virtualcom0 0.0.0.0:8081
 ```
 
-The same 8081 port is exposed by docker using the -p parameter when we created the virtual container.
+The same 8081 port is exposed by Docker using the -p parameter when we created the virtual container.
 
 Once the alsfs nodejs server is started you can start mounting alsfs partitions on your desktop/laptop machine, or any third Gnu/Linux machine sitting on your network, all you have to do is to point alsfs with the server machine running Docker, in this scenario it would be:
 
 ```
 /usr/local/bin/alsfs 192.168.137.3:8081 ~/amigapi
+```
+
+Now you can navigate ~/amigapi/volumes to inspect the Amiga filesystem or ~/amigapi/adf to manage Adf.
+To umount ~/amigapi just type
+
+```
+sudo umont amigapi
 ```
 
