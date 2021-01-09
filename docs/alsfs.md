@@ -8,7 +8,7 @@ Alsfs is designed and tested to work on Debian based distros, the following inst
 In order to use alsfs you have first to install some dependencies with this command:
 ```
 apt-get update
-apt-get install autotools-dev pkg-config dh-autoreconf libfuse-dev libcurl4-openssl-dev libssl-dev libzip-dev libmagic-dev
+apt-get install autotools-dev pkg-config dh-autoreconf libfuse-dev libcurl4-openssl-dev libssl-dev libzip-dev libmagic-dev libjson-c-dev
 ```
 Go to the [github repository](https://github.com/Ozzyboshi/alsfs/releases) and download the latest version, extract it and install it with the following commands.
 
